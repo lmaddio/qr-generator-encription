@@ -1,0 +1,21 @@
+[project]
+name = "qr-cli"
+version = "0.1.0"
+description = "CLI tool and backend for QR code generation"
+authors = [{name = "AI Assistant"}]
+requires-python = ">=3.8"
+dependencies = [
+    "qrcode[pil]>=7.0",
+    "validators>=0.20",
+    "fastapi>=0.100",
+    "uvicorn[standard]>=0.20",
+    "python-multipart>=0.0.6",  # for form handling if needed
+    "cryptography>=41.0",  # for encryption support
+]
+
+[project.scripts]
+qr-cli = "qr_cli.main:main"
+qr-server = "qr_cli.server:run_server"
+
+[tool.setuptools.packages.find]
+where = ["src"]
